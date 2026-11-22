@@ -1,0 +1,72 @@
+# Pages CMS configuration for Accesorios Alma & Vida
+# Place this file at the repository root as: .pages.yml
+
+media:
+  input: assets/productos
+  output: assets/productos
+  rename: safe
+  extensions: [jpg, jpeg, png, webp]
+
+content:
+  - name: productos
+    label: Productos del catálogo
+    type: file
+    path: data/productos.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: Identificador
+        type: string
+        required: true
+        description: "Único y sin espacios. Ejemplo: cadena-001"
+
+      - name: name
+        label: Nombre del accesorio
+        type: string
+        required: true
+
+      - name: category
+        label: Categoría
+        type: select
+        required: true
+        options:
+          values:
+            - Cadenas
+            - Ear cuffs
+            - Chokers
+            - Pulseras
+            - Sets
+            - Tobilleras
+            - Aretes
+            - Descuentos
+
+      - name: image
+        label: Fotografía principal
+        type: image
+        required: true
+        options:
+          extensions: [jpg, jpeg, png, webp]
+          rename: safe
+
+      - name: description
+        label: Descripción
+        type: text
+
+      - name: price
+        label: Precio actual (COP)
+        type: string
+        description: "Ejemplo: $45.000"
+
+      - name: oldPrice
+        label: Precio anterior (si tiene descuento)
+        type: string
+        description: "Ejemplo: $55.000. Déjalo vacío si no aplica."
+
+      - name: discount
+        label: ¿Está en descuento?
+        type: boolean
+
+settings:
+  content:
+    merge: true
