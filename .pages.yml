@@ -1,0 +1,70 @@
+
+# Alma & Vida - Configuración de Pages CMS
+
+media:
+  input: assets/productos
+  output: assets/productos
+  rename: safe
+  extensions:
+    - jpg
+    - jpeg
+    - png
+    - webp
+
+content:
+  - name: productos
+    label: Productos del catálogo
+    type: file
+    path: data/productos.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: Identificador
+        type: string
+        required: true
+
+      - name: name
+        label: Nombre del accesorio
+        type: string
+        required: true
+
+      - name: category
+        label: Categoría
+        type: select
+        required: true
+        options:
+          values:
+            - Cadenas
+            - Ear cuffs
+            - Chokers
+            - Pulseras
+            - Sets
+            - Tobilleras
+            - Aretes
+            - Descuentos
+
+      - name: image
+        label: Fotografía
+        type: image
+        required: true
+
+      - name: description
+        label: Descripción
+        type: text
+
+      - name: price
+        label: Precio en COP
+        type: string
+
+      - name: oldPrice
+        label: Precio anterior
+        type: string
+
+      - name: discount
+        label: ¿Está en descuento?
+        type: boolean
+
+settings:
+  content:
+    merge: true
