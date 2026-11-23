@@ -17,5 +17,15 @@
     "description": "Fndnsns",
     "price": "12.000.0000",
     "discount": true
+  },
+  {
+    "id": "Perlas",
+    "name": "Collar perlas ",
+    "category": "Cadenas",
+    "image": "assets/productos/img4192.jpeg",
+    "description": "Ardillita ",
+    "price": "500.000",
+    "oldPrice": "100000",
+    "discount": true
   }
 ]
